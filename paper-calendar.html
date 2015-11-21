@@ -294,7 +294,9 @@
       _localeChanged: function(locale) {
         // FIXME: use public API for getting locale-aware weekdays once moment/moment#2433 is fixed
         var localeData = moment.localeData(locale);
-        var fdow = localeData._week.dow;
+        //var fdow = localeData._week.dow;
+        // FIXING DOW TO 0 TO MAKE IT WORK IN LOCALE IT
+        var fdow = 0;
         this.set('_firstDayOfWeek', fdow);
         var weekdays = [];
         for (var i=fdow; i<7+fdow; i++) {
